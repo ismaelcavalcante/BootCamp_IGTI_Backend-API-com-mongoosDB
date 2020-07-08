@@ -38,6 +38,6 @@ app.get('/', (req, res) => {
   res.send('API em execucao');
 });
 
-app.listen(() => {
+app.listen(process.env.PORT || 3000, () => {
   logger.info(`Servidor em execucao`);
 });
