@@ -38,6 +38,6 @@ app.get('/', (req, res) => {
   res.send('API em execucao');
 });
 
-app.listen(process.env.DB_PORT || 8000, () => {
-  logger.info(`Servidor em execucao na porta ${process.env.DB_PORT}`);
+app.listen(() => {
+  logger.info(`Servidor em execucao`);
 });
