@@ -34,5 +34,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(8000 || 8081, () => {
-  logger.info(`Servidor em execucao na porta ${process.env.PORT}`);
+  logger.info(`Servidor em execucao`);
 });

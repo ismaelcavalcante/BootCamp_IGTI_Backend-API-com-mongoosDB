@@ -12,7 +12,7 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
 const logger = createLogger({
   transports: [
     new transports.Console(),
-    new winston.transports.MongoDB({
+    new transports.MongoDB({
       level: 'info',
       db: `${process.env.MONGODB}`,
       collection: 'logs_grades',
