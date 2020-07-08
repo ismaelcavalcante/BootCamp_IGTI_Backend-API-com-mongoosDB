@@ -15,10 +15,9 @@ const myFormat = printf(({ level, message, label, timestamp }) => {
 const logger = createLogger({
   transports: [
     new transports.Console(),
-    winston.add(
-      new winston.transports.MongoDB({
+    new transports.MongoDB({
         level: 'info',
-        db: `mongodb+srv://${process.env.USERDB}:${process.env.PASSWDB}@bootcampfullstack-dwnrk.mongodb.net/${process.env.DB}?retryWrites=true&w=majority`,
+        db: `mongodb+srv://ismael:is23568974@bootcampfullstack-dwnrk.mongodb.net/grades?retryWrites=true&w=majority`,
         collection: 'logs_grades',
         capped: true,
         cappedMax: 20,
@@ -27,7 +26,6 @@ const logger = createLogger({
           useUnifiedTopology: true,
         },
       })
-    ),
   ],
   format: combine(label({ label: 'grade-api' }), timestamp(), myFormat),
 });
