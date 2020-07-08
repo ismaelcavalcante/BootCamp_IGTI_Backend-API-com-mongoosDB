@@ -1,10 +1,13 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 import { gradeRouter } from './routes/gradeRouter.js';
 import { logger } from './config/logger.js';
 import { db } from './models/index.js';
+
+dotenv.config();
 
 (async () => {
   try {
@@ -33,6 +36,6 @@ app.get('/', (req, res) => {
   res.send('API em execucao');
 });
 
-app.listen(8000 || 8081, () => {
-  logger.info(`Servidor em execucao`);
+app.listen(process.env.DB_PORT || 8081, () => {
+  logger.info(`Servidor em execucao na porta ${process.env.DB_PORT}`);
 });

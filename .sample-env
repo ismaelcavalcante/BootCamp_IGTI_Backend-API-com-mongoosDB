@@ -1,0 +1,4 @@
+DB_USER=ismael
+DB_PASSW=is23568974
+DB_NAME=grades
+DB_PORT=8000
